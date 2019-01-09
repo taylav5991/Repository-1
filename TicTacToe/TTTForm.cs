@@ -75,12 +75,26 @@ namespace TicTacToe
 
         private bool IsColumnWinner(int col)
         {
+        
+            Label square = GetSquare(col, 0);
+            string symbol = square.Text;
+            for (int row = 1; row < SIZE; row++)
+            {
+                square = GetSquare(col, row);
+                if (symbol == EMPTY || square.Text != symbol)
+                    return false;
+
+            }
             return true;
+
         }
 
         private bool IsAnyColumnWinner()
         {
+
+
             return true;
+
         }
 
         private bool IsDiagonal1Winner()
